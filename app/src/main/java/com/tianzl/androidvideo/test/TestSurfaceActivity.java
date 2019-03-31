@@ -15,10 +15,7 @@ import android.widget.Toast;
 import com.tianzl.androidvideo.R;
 import com.tianzl.androidvideo.custom.MysurfaceView;
 import com.tianzl.androidvideo.entity.VideoInfo;
-import com.tianzl.androidvideo.surfaceview.SurfaceActivity;
 import com.tianzl.androidvideo.utils.CommTools;
-
-import static java.lang.Math.min;
 
 public class TestSurfaceActivity extends AppCompatActivity implements View.OnClickListener{
     private Intent intent;

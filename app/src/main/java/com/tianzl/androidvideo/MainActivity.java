@@ -18,10 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    private Button btVideo;
-    private Button btSurface;
-    private Button btTexture;
+public class MainActivity extends AppCompatActivity {
     private TextView tvTitle;
     private ViewPager viewPager;
     private TabLayout tableLayout;
@@ -30,12 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FileFragment fileFragment;
     private NetFragment netFragment;
     private ViewPagerAdapter adapter;
-
-    public static int flag=0;
-    public static final int VIDEOVIEW_FLAG=0;
-    public static final int SURFACEVIEW_FLAG=1;
-    public static final int TEXTUREVIEW_FLAG=2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,32 +50,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        btVideo= (Button) findViewById(R.id.main_video);
-        btVideo.setOnClickListener(this);
-        btSurface= (Button) findViewById(R.id.main_surface);
-        btSurface.setOnClickListener(this);
-        btTexture= (Button) findViewById(R.id.main_texture);
-        btTexture.setOnClickListener(this);
         tvTitle= (TextView) findViewById(R.id.main_title);
         viewPager= (ViewPager) findViewById(R.id.main_viewpager);
         tableLayout= (TabLayout) findViewById(R.id.main_tab);
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.main_video:
-                Toast.makeText(this,"切换到VideoVIew",Toast.LENGTH_SHORT).show();
-                flag=VIDEOVIEW_FLAG;
-                break;
-            case R.id.main_surface:
-                Toast.makeText(this,"切换到SurfaceView",Toast.LENGTH_SHORT).show();
-                flag=SURFACEVIEW_FLAG;
-                break;
-            case R.id.main_texture:
-                Toast.makeText(this,"切换到TextureView",Toast.LENGTH_SHORT).show();
-                flag=TEXTUREVIEW_FLAG;
-                break;
-        }
-    }
 }

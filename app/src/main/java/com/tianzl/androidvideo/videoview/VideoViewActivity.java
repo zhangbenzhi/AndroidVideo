@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.MediaController;
+import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +52,7 @@ public class VideoViewActivity extends AppCompatActivity implements View.OnClick
     private MyMediaConnller connller;
     //播放状态
     private boolean isPlay=false;
+    private ProgressBar pb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +80,7 @@ public class VideoViewActivity extends AppCompatActivity implements View.OnClick
 
     }
     private void initView() {
+        pb= (ProgressBar) findViewById(R.id.pb);
         videoView= (VideoView) findViewById(R.id.videoview_view);
         topLayout= (LinearLayout) findViewById(R.id.video_top_ll);
         bottomLayout= (LinearLayout) findViewById(R.id.video_bottom_ll);
@@ -142,6 +145,7 @@ public class VideoViewActivity extends AppCompatActivity implements View.OnClick
         videoView.start();
         ivState.setSelected(true);
         ivPlay.setSelected(true);
+        pb.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -215,6 +219,12 @@ public class VideoViewActivity extends AppCompatActivity implements View.OnClick
 
         @Override
         public void onPrepared(MediaPlayer mediaPlayer) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    pb.setVisibility(View.GONE);
+                }
+            });
         }
     }
 }

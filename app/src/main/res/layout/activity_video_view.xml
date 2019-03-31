@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.tianzl.androidvideo.videoview.VideoViewActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -119,5 +120,10 @@
             />
     </LinearLayout>
 
+    <ProgressBar
+        android:layout_width="80dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/pb"
+        android:layout_height="80dp" />
 
 </RelativeLayout>

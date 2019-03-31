@@ -12,13 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.tianzl.androidvideo.MainActivity;
 import com.tianzl.androidvideo.R;
 import com.tianzl.androidvideo.adapter.VideoAdapter;
 
 import com.tianzl.androidvideo.entity.VideoInfo;
-import com.tianzl.androidvideo.surfaceview.SurfaceActivity;
-import com.tianzl.androidvideo.textureview.TextureViewActivity;
 import com.tianzl.androidvideo.utils.Constant;
 import com.tianzl.androidvideo.videoview.VideoViewActivity;
 
@@ -59,20 +56,8 @@ public class NetFragment extends Fragment {
                 intent.putExtra("VIDEO_INFO", video);
                 intent.putExtra("VIDEO_SORT",position+"/"+mData.size());
                 intent.putExtra("VIDEO_TYPE",1);
-                switch (MainActivity.flag) {
-                    case MainActivity.VIDEOVIEW_FLAG:
                         intent.setClass(getActivity(), VideoViewActivity.class);
                         startActivity(intent);
-                        break;
-                    case MainActivity.SURFACEVIEW_FLAG:
-                        intent.setClass(getActivity(), SurfaceActivity.class);
-                        startActivity(intent);
-                        break;
-                    case MainActivity.TEXTUREVIEW_FLAG:
-                        intent.setClass(getActivity(),TextureViewActivity.class);
-                        startActivity(intent);
-                        break;
-                }
             }
         });
     }

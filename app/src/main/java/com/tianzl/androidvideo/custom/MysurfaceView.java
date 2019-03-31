@@ -20,14 +20,9 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.SeekBar;
-
-import com.tianzl.androidvideo.surfaceview.SurfaceActivity;
-import com.tianzl.androidvideo.utils.CommTools;
 
 import java.io.IOException;
 
-import static android.content.Context.AUDIO_SERVICE;
 import static java.lang.Math.min;
 
 /**
